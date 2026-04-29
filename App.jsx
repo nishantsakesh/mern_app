@@ -104,3 +104,100 @@ function App() {
 }
 
 export default App;
+
+
+
+
+
+
+
+// import { useState, useEffect } from "react";
+// import axios from 'axios';
+
+// function App() {
+//   const [products, setProducts] = useState([]);
+//   // Make sure keys match exactly what your Backend expects!
+//   const [formData, setFormData] = useState({ 
+//     productId: '', productName: '', productDes: '', productPrice: '', productQuantity: ''
+//   });
+
+//   const api = 'http://localhost:3000/api/products';
+
+//   useEffect(() => {
+//     fetchProducts();
+//   }, []);
+
+//   const fetchProducts = async () => {
+//     const res = await axios.get(`${api}/all`); // Changed 'data' to 'res'
+//     setProducts(res.data);
+//   };
+
+//   const handleChange = (e) => {
+//     setFormData({ ...formData, [e.target.name]: e.target.value });
+//   };
+
+//   const handleSubmit = async (e) => {
+//     e.preventDefault();
+//     // You MUST pass formData here for the backend to receive it
+//     const res = await axios.post(`${api}/all`, formData); 
+//     setProducts([...products, res.data]); // Adds new product to list immediately
+//     alert("Saved!");
+//   };
+
+//   const handleDelete = async (id) => { // Added 'id' parameter here
+//     await axios.delete(`${api}/${id}`);
+//     setProducts(products.filter(p => p._id !== id));
+//   };
+
+//   return (
+//     <div style={{ padding: '20px' }}>
+//       <h1>Product Inventory</h1>
+      
+//       <form onSubmit={handleSubmit} style={{ display: 'grid', gap: '10px', marginBottom: '20px' }}>
+//         {/* Name attributes must match the keys in formData state */}
+//         <input name="productId" placeholder="ID" onChange={handleChange} value={formData.productId} required />
+//         <input name="productName" placeholder="Name" onChange={handleChange} value={formData.productName} required />
+//         <input name="productDes" placeholder="Description" onChange={handleChange} value={formData.productDes} required />
+//         <input name="productPrice" type="number" min={0} placeholder="Price" onChange={handleChange} value={formData.productPrice} required />
+//         <input name="productQuantity" type="number" min={0} placeholder="Qty" onChange={handleChange} value={formData.productQuantity} required />
+//         <button type="submit">Save Product</button>
+//       </form>
+      
+//       <hr />
+//       <h2>Product List</h2>
+//       <ul>
+//         {products.map(p => (
+//           <li key={p._id} style={{ marginBottom: '10px' }}>
+//             <strong>{p.productName}</strong> - ${p.productPrice} (Qty: {p.productQuantity})
+//             <button onClick={() => handleDelete(p._id)} style={{ marginLeft: '10px', color: 'red' }}>
+//               Delete
+//             </button>
+//           </li>
+//         ))}
+//       </ul>
+//     </div>
+//   );
+// }
+
+// export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
